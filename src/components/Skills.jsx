@@ -7,13 +7,12 @@ import {
 import { portfolioData } from '../data/portfolio';
 
 const skillCategories = [
-    { key: 'core', label: 'Core Languages', icon: Code, color: 'from-blue-500/20 to-cyan-500/20' },
-    { key: 'frontend', label: 'Frontend', icon: Layout, color: 'from-purple-500/20 to-pink-500/20' },
-    { key: 'backend', label: 'Backend', icon: Server, color: 'from-green-500/20 to-emerald-500/20' },
-    { key: 'erp', label: 'ERP & Automation', icon: Box, color: 'from-orange-500/20 to-yellow-500/20' },
-    { key: 'database', label: 'Database', icon: Database, color: 'from-red-500/20 to-rose-500/20' },
+    { key: 'languages', label: 'Languages', icon: Code, color: 'from-blue-500/20 to-cyan-500/20' },
+    { key: 'architecture', label: 'Architecture', icon: Layout, color: 'from-purple-500/20 to-pink-500/20' },
+    { key: 'ai_ml', label: 'AI & Machine Learning', icon: Brain, color: 'from-green-500/20 to-emerald-500/20' },
+    { key: 'backend_cloud', label: 'Backend & Cloud', icon: Server, color: 'from-orange-500/20 to-yellow-500/20' },
     { key: 'tools', label: 'Tools', icon: Wrench, color: 'from-indigo-500/20 to-violet-500/20' },
-    { key: 'soft', label: 'Soft Skills', icon: Brain, color: 'from-teal-500/20 to-cyan-500/20' },
+    { key: 'soft', label: 'Soft Skills', icon: MessageSquare, color: 'from-teal-500/20 to-cyan-500/20' },
 ];
 
 export default function Skills() {

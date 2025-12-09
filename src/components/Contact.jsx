@@ -134,13 +134,18 @@ export default function Contact() {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.3 }}
                     >
-                        <form onSubmit={handleSubmit(onSubmit)} className="glass-card p-8">
-                            <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+                        <form onSubmit={handleSubmit(onSubmit)} className="glass-card p-8 border-t border-white/10">
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="p-3 rounded-full bg-blue-500/10">
+                                    <Send size={24} className="text-blue-400" />
+                                </div>
+                                <h3 className="text-2xl font-semibold">Send a Message</h3>
+                            </div>
 
                             <div className="space-y-5">
                                 {/* Name */}
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+                                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)] pl-1">
                                         Your Name
                                     </label>
                                     <input
@@ -156,7 +161,7 @@ export default function Contact() {
 
                                 {/* Email */}
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+                                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)] pl-1">
                                         Email Address
                                     </label>
                                     <input
@@ -173,15 +178,15 @@ export default function Contact() {
 
                                 {/* Message */}
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+                                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)] pl-1">
                                         Message
                                     </label>
                                     <textarea
                                         id="message"
                                         {...register('message')}
-                                        rows={4}
+                                        rows={5}
                                         className="form-input resize-none"
-                                        placeholder="Tell me about your project..."
+                                        placeholder="How can I help you?"
                                     />
                                     {errors.message && (
                                         <p className="form-error">{errors.message.message}</p>
@@ -192,12 +197,12 @@ export default function Contact() {
                                 <motion.button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="btn-primary w-full justify-center"
+                                    className="btn-primary w-full justify-center text-lg h-14 mt-2"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     {isSubmitting ? (
-                                        <span className="flex items-center gap-2">
+                                        <span className="flex items-center gap-3">
                                             <motion.div
                                                 animate={{ rotate: 360 }}
                                                 transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
@@ -207,31 +212,35 @@ export default function Contact() {
                                         </span>
                                     ) : (
                                         <span className="flex items-center gap-2">
-                                            <Send size={18} />
                                             Send Message
+                                            <Send size={18} className="ml-1" />
                                         </span>
                                     )}
                                 </motion.button>
+
+                                <p className="text-xs text-center text-slate-500 mt-4">
+                                    I usually respond within 24 hours.
+                                </p>
 
                                 {/* Submit Status */}
                                 {submitStatus && (
                                     <motion.div
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className={`flex items-center gap-2 p-4 rounded-lg ${submitStatus === 'success'
-                                                ? 'bg-green-500/20 text-green-400'
-                                                : 'bg-red-500/20 text-red-400'
+                                        className={`flex items-center gap-3 p-4 rounded-xl mt-4 border ${submitStatus === 'success'
+                                            ? 'bg-green-500/10 text-green-400 border-green-500/20'
+                                            : 'bg-red-500/10 text-red-400 border-red-500/20'
                                             }`}
                                     >
                                         {submitStatus === 'success' ? (
                                             <>
-                                                <CheckCircle2 size={20} />
-                                                <span>Message sent successfully!</span>
+                                                <CheckCircle2 size={24} />
+                                                <span className="font-medium">Message sent successfully!</span>
                                             </>
                                         ) : (
                                             <>
-                                                <AlertCircle size={20} />
-                                                <span>Failed to send message. Please try again.</span>
+                                                <AlertCircle size={24} />
+                                                <span className="font-medium">Failed to send message.</span>
                                             </>
                                         )}
                                     </motion.div>
