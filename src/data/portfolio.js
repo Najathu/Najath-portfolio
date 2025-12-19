@@ -6,8 +6,8 @@ export const portfolioData = {
         subtitle: "A results-driven Flutter Developer specializing in building intelligent, high-performance applications by integrating cutting-edge ML models and crafting seamless user experiences.",
         email: "najath.thekkeyil13@gmail.com",
         location: "Kerala, India",
-        linkedin: "#", // User provided "Linkedin" text but no URL
-        github: "#", // User provided "GitHub" text but no URL
+        linkedin: "https://www.linkedin.com/in/najath-thekkeyil/",
+        github: "https://github.com/Najathu",
         phone: "+919072350946",
     },
 
@@ -80,37 +80,61 @@ export const portfolioData = {
     projects: [
         {
             title: "Needoo E-Commerce Ecosystem",
-            description: "A multi-app system (Merchant, Customer, Delivery) for complete store and order management.",
+            description: "A complete 3-app ecosystem consisting of Customer App, Merchant App, and Delivery App for seamless store, order, and delivery management.",
             stack: ["Flutter", "Google Maps", "Firebase FCM", "REST APIs"],
             impact: [
                 "Real-time Delivery Tracking",
-                "Secure Payment Integration",
+                "Secure Payment Integration"
             ],
-            highlights: ["Order Pickup", "Route Optimization", "Multi-App Sync"],
+            highlights: [
+                "Dedicated Customer, Merchant & Delivery Apps",
+                "Order Pickup & Fulfillment",
+                "Route Optimization",
+                "Multi-App Sync",
+                "Order Management",
+                "Payment Integration",
+                "Push Notifications",
+                "Real-time Order Updates",
+            ],
             image: null,
         },
+
         {
             title: "TBO Smart App",
-            description: "Business management app integrated with ERP for lead, project, and task management.",
+            description: "Business management app integrated with ERP for lead, project, and task management with multi-role login support (CRM, Employee, Admin).",
             stack: ["Flutter", "ERP Backend", "Role-Based Access"],
             impact: [
                 "Streamlined Admin/Employee Workflows",
-                "Automated Timesheets",
+                "Automated Timesheets"
             ],
-            highlights: ["CRM Module", "Task Assignment", "Project Tracking"],
+            highlights: [
+                "Separate CRM, Employee & Admin Dashboards",
+                "Task Assignment",
+                "Project Tracking",
+                "Lead Management",
+                "Timesheet Management",
+                "Notification System",
+            ],
             image: null,
         },
+
         {
             title: "Chundakkadan App",
-            description: "A tracking and operations app combining live location automation with finance.",
-            stack: ["Flutter", "Live Location", "Sales Automation"],
+            description: "A field operations app where users periodically send their live latitude and longitude to the backend for monitoring and records.",
+            stack: ["Flutter", "Live Location", "Background Services"],
             impact: [
-                "Adjustable Interval Tracking",
-                "Operations Optimization",
+                "Accurate Field Location Logging",
+                "Improved Operations Visibility"
             ],
-            highlights: ["Sales Invoicing", "Real-time Monitoring", "Payment Collection"],
+            highlights: [
+                "Sales Order Creation",
+                "Sales Return Handling",
+                "Payment Entry Management",
+                "Location Sync (Latitude & Longitude)"
+            ],
             image: null,
-        },
+        }
+
     ],
 
     skills: {
@@ -133,6 +157,12 @@ export const portfolioData = {
             school: "SMM Higher Secondary School, Tanur",
             year: "2018-2020",
         },
+        {
+            degree: "SSLC (10th) – CBSE",
+            school: "Al Khalidiya,Riyadh,Saudi Arabia",
+            year: "2017-2018",
+        },
+
     ],
 
     testimonials: [], // No testimonials provided yet

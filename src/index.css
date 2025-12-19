@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  /* Monochrome Flutter Blue Theme */
-  --color-bg-primary: #020617;
-  /* Very dark slate/blue */
-  --color-bg-secondary: #0f172a;
-  /* Dark slate */
-  --color-text-primary: #f8fafc;
-  /* Slate 50 */
-  --color-text-secondary: #94a3b8;
-  /* Slate 400 */
-  --color-text-muted: #64748b;
-  /* Slate 500 */
+  /* Pure Black Premium Theme */
+  --color-bg-primary: #000000;
+  /* Pure black */
+  --color-bg-secondary: #0a0a0a;
+  /* Near black */
+  --color-text-primary: #ffffff;
+  /* Pure white */
+  --color-text-secondary: #a1a1aa;
+  /* Zinc 400 */
+  --color-text-muted: #71717a;
+  /* Zinc 500 */
   --color-accent: #3b82f6;
   /* Blue 500 (Flutter Light Blue ish) */
   --color-accent-dark: #02569b;
   /* Flutter Dark Blue */
-  --color-border: #1e293b;
-  /* Slate 800 */
-  --glass-border: rgba(59, 130, 246, 0.1);
-  --glass-bg: rgba(15, 23, 42, 0.7);
-  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
-    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --color-border: #18181b;
+  /* Zinc 900 */
+  --glass-border: rgba(59, 130, 246, 0.15);
+  --glass-bg: rgba(10, 10, 10, 0.8);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(59, 130, 246, 0.05);
 }
 
 @layer base {
@@ -95,29 +95,51 @@
     @apply px-3 py-1 text-sm rounded-full bg-blue-950/30 text-blue-300 border border-blue-500/20;
   }
 
-  /* Large Faded Profile Pic */
+  /* Large Profile Pic with Animated Border */
   .profile-image-large-container {
     @apply relative w-full h-[500px] md:h-[700px] flex items-end justify-center md:items-center md:justify-end;
   }
 
   .profile-image-large {
-    @apply w-full h-full object-cover object-top md:object-right-top;
-    filter: grayscale(100%) contrast(1.1) brightness(0.9);
+    @apply w-[320px] h-[400px] md:w-[400px] md:h-[500px] object-cover object-top rounded-2xl;
+    filter: grayscale(30%) contrast(1.05) brightness(0.95);
+    transition: all 0.5s ease-in-out;
 
-    /* Refined Edge Fade - Smooth blend to bottom and left (into content) */
-    mask-image: radial-gradient(circle at 70% 40%, black 30%, transparent 100%),
-      linear-gradient(to bottom, black 50%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-image: radial-gradient(circle at 70% 40%, black 30%, transparent 100%),
-      linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-composite: source-in;
+    /* Animated gradient border */
+    padding: 6px;
+    background: linear-gradient(var(--color-bg-primary), var(--color-bg-primary)) padding-box,
+      conic-gradient(from var(--border-angle, 0deg),
+        #02569B, #40C4FF, #3b82f6, #02569B, #40C4FF, #3b82f6, #02569B) border-box;
+    border: 4px solid transparent;
 
-    transition: filter 0.5s ease-in-out;
+    /* Glow effect */
+    box-shadow:
+      0 0 40px rgba(2, 86, 155, 0.3),
+      0 0 80px rgba(64, 196, 255, 0.15),
+      inset 0 0 30px rgba(2, 86, 155, 0.1);
+
+    animation: rotate-border 4s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    to {
+      --border-angle: 360deg;
+    }
+  }
+
+  @property --border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
   }
 
   .profile-image-large:hover {
-    filter: grayscale(0%) contrast(1.05) brightness(1);
-    /* Optionally relax the mask slightly or keep it same */
+    filter: grayscale(0%) contrast(1.05) brightness(1.05);
+    transform: scale(1.02);
+    box-shadow:
+      0 0 60px rgba(2, 86, 155, 0.5),
+      0 0 120px rgba(64, 196, 255, 0.3),
+      inset 0 0 40px rgba(2, 86, 155, 0.15);
   }
 
   /* Animated Background - Subtle Blue Flow */
@@ -128,7 +150,7 @@
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: #020617;
+    background: #000000;
     overflow: hidden;
   }
 

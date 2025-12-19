@@ -62,7 +62,7 @@ export default function Navbar() {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                     >
-                        <span className="gradient-text-accent">AK</span>
+                        <span className="gradient-text-accent">NT</span>
                     </a>
 
                     {/* Desktop Navigation */}

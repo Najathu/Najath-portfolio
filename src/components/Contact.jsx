@@ -28,12 +28,30 @@ export default function Contact() {
     });
 
     const onSubmit = async (data) => {
-        // Simulate form submission
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            console.log('Form submitted:', data);
-            setSubmitStatus('success');
-            reset();
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: '22511428-e6bc-4663-ae66-edbd7521c177',
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                    subject: `New message from ${data.name} via Portfolio`,
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                reset();
+            } else {
+                setSubmitStatus('error');
+            }
             setTimeout(() => setSubmitStatus(null), 5000);
         } catch {
             setSubmitStatus('error');

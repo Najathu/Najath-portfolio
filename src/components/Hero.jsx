@@ -130,9 +130,7 @@ export default function Hero() {
                     <div className="absolute bottom-20 left-10 glass-card p-3 rounded-xl border-blue-500/30 animate-bounce delay-700 md:block hidden">
                         <span className="text-2xl">⚡</span>
                     </div>
-                    <div className="absolute top-20 right-10 glass-card p-3 rounded-xl border-blue-500/30 animate-bounce delay-1000 md:block hidden">
-                        <span className="text-2xl">🤖</span>
-                    </div>
+
                 </motion.div>
             </div>
         </section>
